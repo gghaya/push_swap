@@ -6,7 +6,7 @@
 /*   By: gghaya <gghaya@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 00:58:33 by gghaya            #+#    #+#             */
-/*   Updated: 2023/03/03 01:23:22 by gghaya           ###   ########.fr       */
+/*   Updated: 2023/03/03 01:48:17 by gghaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ void	rrb(t_node **stack_b)
 	write (1, "rrb\n", 4);
 }
 
-
-void	rrr(t_node **stack_a, t_node **stack_b)
+void	revrot(t_node **stack)
 {
-	revrot(stack_a);
-	revrot(stack_b);
-	write(1, "rrr\n", 4);
+	t_node	*last;
+
+	last = ft_lstlast(*stack);
+	ft_lstadd_front(stack, last);
 }
 
 void	push(t_node **stack_a, t_node **stack_b)
@@ -50,4 +50,3 @@ void	pb(t_node **stack_b, t_node **stack_a)
 	push(stack_a, stack_b);
 	write (1, "pb\n", 4);
 }
-

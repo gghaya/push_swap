@@ -6,7 +6,7 @@
 /*   By: gghaya <gghaya@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 20:30:16 by gghaya            #+#    #+#             */
-/*   Updated: 2023/03/03 01:20:54 by gghaya           ###   ########.fr       */
+/*   Updated: 2023/03/03 02:05:00 by gghaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,6 @@ void	mainsort(t_node **stack_a, t_node **stack_b);
 void	fillin_stack_a(t_node **stack_a, t_node **stack_b);
 void	fillin(t_node **stack_a, t_node **stack_b, int i, int j);
 int		getdemistack(t_node *stack_a);
+char	**returnsplitedtab(int argc, char *argv[]);
+int		ft_erreur(long int n, int sign);
 #endif

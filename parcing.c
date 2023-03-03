@@ -6,7 +6,7 @@
 /*   By: gghaya <gghaya@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 23:14:36 by gghaya            #+#    #+#             */
-/*   Updated: 2023/03/03 01:17:53 by gghaya           ###   ########.fr       */
+/*   Updated: 2023/03/03 01:56:25 by gghaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,14 @@
 
 t_node	*parcing(int argc, char *argv[])
 {
-	char	**arguments;
-	char	**splitedtab;
-	char	*jointure;
 	int		*numbers;
-	int		i;
 	int		j;
 	int		len;
+	char	**splitedtab;
 
-	i = 1;
 	j = 0;
 	len = 0;
-	jointure = NULL;
-	arguments = (char **)malloc((argc + 1) * sizeof(char *));
-	while (i < argc)
-	{
-		arguments[i - 1] = argv[i];
-		i++;
-	}
-	jointure = ft_strjoin(argc - 1, arguments, " ");
-	splitedtab = ft_split(jointure, ' ');
+	splitedtab = returnsplitedtab(argc, argv);
 	while (splitedtab[len] != NULL)
 		len++;
 	numbers = malloc(len * sizeof(int));
@@ -93,3 +81,22 @@ void	fct(int *sortednumber, t_node *liste, int len)
 	}
 }
 
+char	**returnsplitedtab(int argc, char *argv[])
+{
+	char	**arguments;
+	char	**splitedtab;
+	char	*jointure;
+	int		i;
+
+	i = 1;
+	jointure = NULL;
+	arguments = (char **)malloc((argc + 1) * sizeof(char *));
+	while (i < argc)
+	{
+		arguments[i - 1] = argv[i];
+		i++;
+	}
+	jointure = ft_strjoin(argc - 1, arguments, " ");
+	splitedtab = ft_split(jointure, ' ');
+	return (splitedtab);
+}

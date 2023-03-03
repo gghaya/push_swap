@@ -6,7 +6,7 @@
 /*   By: gghaya <gghaya@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 20:53:44 by gghaya            #+#    #+#             */
-/*   Updated: 2023/03/03 01:07:11 by gghaya           ###   ########.fr       */
+/*   Updated: 2023/03/03 02:04:36 by gghaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,15 @@ int	ft_atoi(const char *str)
 			n = n * 10 + str[i] - 48 ;
 			i++;
 	}
+	return (ft_erreur(n, sign));
+}
+
+int	ft_erreur(long int n, int sign)
+{
 	if (n * sign < -2147483646 || n * sign > 2147483647)
 	{
 		printf("Error\n");
-		exit(1);
+		exit (1);
 	}
 	return (n * sign);
 }
