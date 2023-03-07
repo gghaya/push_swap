@@ -6,7 +6,7 @@
 /*   By: gghaya <gghaya@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 23:14:36 by gghaya            #+#    #+#             */
-/*   Updated: 2023/03/03 01:56:25 by gghaya           ###   ########.fr       */
+/*   Updated: 2023/03/05 18:14:36 by gghaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,14 @@ t_node	*parcing(int argc, char *argv[])
 			numbers[j] = ft_atoi(splitedtab[j]);
 		else
 		{
-			printf("Error1\n");
+			write(1, "Error\n", 6);
 			exit(1);
 		}
 		chekerduplication(numbers, j);
 		j++;
 	}
-	chekersorted(numbers, len);
-	return (ft_create_list(numbers, len));
+	chekersorted(numbers, len, argc);
+	return (freeall(splitedtab, len - 1), ft_create_list(numbers, len));
 }
 
 t_node	*ft_create_list(int *numbers, int len)
@@ -59,7 +59,7 @@ t_node	*ft_create_list(int *numbers, int len)
 	}
 	sortednumbers = ft_sort_int_tab(numbers, len);
 	fct (sortednumbers, head, len);
-	return (head);
+	return (free (numbers), head);
 }
 
 void	fct(int *sortednumber, t_node *liste, int len)
@@ -97,6 +97,7 @@ char	**returnsplitedtab(int argc, char *argv[])
 		i++;
 	}
 	jointure = ft_strjoin(argc - 1, arguments, " ");
+	free(arguments);
 	splitedtab = ft_split(jointure, ' ');
-	return (splitedtab);
+	return (free(jointure), splitedtab);
 }

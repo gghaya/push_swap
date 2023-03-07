@@ -6,7 +6,7 @@
 /*   By: gghaya <gghaya@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 20:30:16 by gghaya            #+#    #+#             */
-/*   Updated: 2023/03/03 02:05:00 by gghaya           ###   ########.fr       */
+/*   Updated: 2023/03/07 04:31:46 by gghaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	freeall(char **c, int i);
 char	*ft_substr(char const *s, int start, int len);
 t_node	*parcing(int argc, char *argv[]);
 void	chekerduplication(int *numbers, int j);
-void	chekersorted(int *numbers, int len);
+void	chekersorted(int *numbers, int len, int argc);
 t_node	*ft_lstnew(int content);
 void	ft_lstadd_back(t_node **lst, t_node *new);
 int		ft_lstsize(t_node *lst);

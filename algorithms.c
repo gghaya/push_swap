@@ -6,7 +6,7 @@
 /*   By: gghaya <gghaya@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 23:48:26 by gghaya            #+#    #+#             */
-/*   Updated: 2023/03/02 23:17:07 by gghaya           ###   ########.fr       */
+/*   Updated: 2023/03/05 17:19:03 by gghaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void	sort_5(t_node **stack_a, t_node **stack_b)
 	push_min(stack_a, stack_b);
 	sort_4(stack_a, stack_b);
 	pa(stack_a, stack_b);
+	system("leaks push_swap");
 }
 
 void	fillin_stack_a(t_node **stack_a, t_node **stack_b)

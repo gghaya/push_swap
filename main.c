@@ -6,17 +6,24 @@
 /*   By: gghaya <gghaya@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 18:36:51 by gghaya            #+#    #+#             */
-/*   Updated: 2023/03/02 23:20:27 by gghaya           ###   ########.fr       */
+/*   Updated: 2023/03/05 18:14:19 by gghaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
+#include<stdlib.h>
+
+// void	che()
+// {
+// 	system("leaks push_swap");
+// }
 
 int	main(int argc, char *argv[])
 {
 	t_node	*stack_a;
 	t_node	*stack_b;
 
+	// atexit(che);
 	stack_b = NULL;
 	stack_a = NULL;
 	if (argc == 1)
@@ -33,9 +40,5 @@ int	main(int argc, char *argv[])
 		else
 			mainsort(&stack_a, &stack_b);
 	}
-	while(stack_a)
-	{
-		printf("%d || ",(stack_a)->data);
-		(stack_a) = (stack_a)->next;
-	}
+	exit(0);
 }

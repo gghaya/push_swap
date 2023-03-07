@@ -6,7 +6,7 @@
 /*   By: gghaya <gghaya@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 00:58:33 by gghaya            #+#    #+#             */
-/*   Updated: 2023/03/03 01:48:17 by gghaya           ###   ########.fr       */
+/*   Updated: 2023/03/05 16:11:27 by gghaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,5 @@ void	pa(t_node **stack_a, t_node **stack_b)
 void	pb(t_node **stack_b, t_node **stack_a)
 {
 	push(stack_a, stack_b);
-	write (1, "pb\n", 4);
+	write (1, "pb\n", 3);
 }
