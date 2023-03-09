@@ -6,7 +6,7 @@
 /*   By: gghaya <gghaya@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 19:34:51 by gghaya            #+#    #+#             */
-/*   Updated: 2023/03/03 00:53:43 by gghaya           ###   ########.fr       */
+/*   Updated: 2023/03/08 23:01:40 by gghaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,12 @@ int	ft_isdigit(char *s)
 			return (0);
 		i++;
 	}
+	return (1);
+}
+
+int	ft_digit(char s)
+{
+	if (s < '0' || s > '9')
+		return (0);
 	return (1);
 }

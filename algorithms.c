@@ -6,7 +6,7 @@
 /*   By: gghaya <gghaya@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 23:48:26 by gghaya            #+#    #+#             */
-/*   Updated: 2023/03/05 17:19:03 by gghaya           ###   ########.fr       */
+/*   Updated: 2023/03/08 23:02:29 by gghaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	sort_3(t_node **stack_a)
 	int	min;
 	int	diff;
 
-	min = getindex(*stack_a, getmin(*stack_a));
-	max = getindex(*stack_a, getmax(*stack_a));
+	min = getindexx(*stack_a, getminn(*stack_a));
+	max = getindexx(*stack_a, getmaxx(*stack_a));
 	diff = max - min;
 	if (diff == -1)
 	{
@@ -53,7 +53,6 @@ void	sort_5(t_node **stack_a, t_node **stack_b)
 	push_min(stack_a, stack_b);
 	sort_4(stack_a, stack_b);
 	pa(stack_a, stack_b);
-	system("leaks push_swap");
 }
 
 void	fillin_stack_a(t_node **stack_a, t_node **stack_b)
@@ -89,13 +88,11 @@ void	mainsort(t_node **stack_a, t_node **stack_b)
 {
 	int		i;
 	int		j;
-	t_node	*p;
 
 	i = 1;
 	j = 15;
 	if (ft_lstsize(*stack_a) > 250)
 		j = 25;
-	p = *stack_a;
 	fillin(stack_a, stack_b, i, j);
 	fillin_stack_a(stack_a, stack_b);
 }

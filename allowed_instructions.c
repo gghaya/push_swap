@@ -6,7 +6,7 @@
 /*   By: gghaya <gghaya@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 16:14:14 by gghaya            #+#    #+#             */
-/*   Updated: 2023/03/03 01:48:57 by gghaya           ###   ########.fr       */
+/*   Updated: 2023/03/08 02:00:37 by gghaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,10 @@ void	rot(t_node **stack)
 	t_node	*tmp;
 
 	tmp = (*stack);
-	(*stack) = (*stack)->next;
-	tmp ->next = NULL;
-	ft_lstadd_back(stack, tmp);
+	if (tmp != NULL)
+	{
+		(*stack) = (*stack)->next;
+		tmp ->next = NULL;
+		ft_lstadd_back(stack, tmp);
+	}
 }

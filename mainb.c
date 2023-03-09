@@ -1,48 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   chekers.c                                          :+:      :+:    :+:   */
+/*   mainb.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gghaya <gghaya@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/06 16:54:26 by gghaya            #+#    #+#             */
-/*   Updated: 2023/03/08 01:52:24 by gghaya           ###   ########.fr       */
+/*   Created: 2023/03/08 00:48:22 by gghaya            #+#    #+#             */
+/*   Updated: 2023/03/09 22:16:10 by gghaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include "push_swap.h"
 
-void	chekerduplication(int *numbers, int j)
+int	main(int argc, char *argv[])
 {
-	int	i;
+	t_node	*stack_a;
+	t_node	*stack_b;
 
-	i = 0;
-	while (j > i)
+	stack_b = NULL;
+	stack_a = NULL;
+	if (argc == 1)
+		exit (0);
+	if (argc >= 2)
 	{
-		if (numbers[j] == numbers[i])
-		{
-			write(1, "Error\n", 6);
-			exit(1);
-		}
-		i++;
+		stack_a = parcing (argc, argv);
+		cheker_bonus(stack_a);
 	}
-}
-
-void	chekersorted(int *numbers, int len, int argc)
-{
-	int	i;
-	int	k;
-
-	i = 0;
-	k = 0;
-	if (argc == 2 && len == 1)
-		exit(1);
-	while (i < len - 1)
-	{
-		if (numbers[i] > numbers[i + 1])
-			k += 1;
-		i++;
-	}
-	if (k == 0)
-		exit(1);
+	return (0);
 }

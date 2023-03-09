@@ -6,7 +6,7 @@
 /*   By: gghaya <gghaya@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 17:58:55 by gghaya            #+#    #+#             */
-/*   Updated: 2023/03/02 01:33:09 by gghaya           ###   ########.fr       */
+/*   Updated: 2023/03/09 01:39:13 by gghaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,16 +58,15 @@ int	ft_lstsize(t_node *lst)
 	return (i);
 }
 
-void	ft_lstclear(t_node **lst, void (*del)(int))
+void	ft_lstclear(t_node **lst)
 {
 	t_node	*p;
 
-	if (!lst || !*lst || !del)
+	if (!lst || !*lst)
 		return ;
 	while (*lst)
 	{
 		p = (*lst)->next;
-		del((*lst)->data);
 		free((*lst));
 		(*lst) = p;
 	}

@@ -6,7 +6,7 @@
 /*   By: gghaya <gghaya@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 22:37:31 by gghaya            #+#    #+#             */
-/*   Updated: 2023/03/02 01:36:27 by gghaya           ###   ########.fr       */
+/*   Updated: 2023/03/09 00:39:42 by gghaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,27 +28,31 @@ int	size_total(char **strs, char *sep, int size)
 	return (tlen);
 }
 
-char	*ft_strjoin(int size, char **strs, char *sep)
+char	*ft_strjoin(int size, char **strs, char *sep, int i)
 {
-	int		i;
 	int		j;
 	int		k;
 	char	*s;
+	int		f;
 
-	k = size_total(strs, sep, size);
-	s = (char *)malloc(sizeof(char) * (k + 1));
-	i = 0;
+	s = (char *)malloc(sizeof(char) * (size_total(strs, sep, size) + 1));
 	k = 0;
+	f = 0;
 	while (i < size)
 	{
 		j = 0;
 		while (strs[i][j])
+		{
+			if (ft_digit(strs[i][j]))
+				f = 1;
 			s[k++] = strs[i][j++];
+		}
+		if (f == 0)
+			write_error();
 		j = 0;
 		while (sep[j] && i < size - 1)
 			s[k++] = sep[j++];
 		i++;
 	}
-	s[k] = '\0';
-	return (s);
+	return (s[k] = '\0', s);
 }

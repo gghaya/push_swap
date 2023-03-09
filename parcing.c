@@ -6,7 +6,7 @@
 /*   By: gghaya <gghaya@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 23:14:36 by gghaya            #+#    #+#             */
-/*   Updated: 2023/03/05 18:14:36 by gghaya           ###   ########.fr       */
+/*   Updated: 2023/03/08 23:55:37 by gghaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	fct(int *sortednumber, t_node *liste, int len)
 		while (head)
 		{
 			if (sortednumber[i] == head->data)
-				head->position = i + 1;
+				head->position = i;
 			head = head->next;
 		}
 		i++;
@@ -96,7 +96,7 @@ char	**returnsplitedtab(int argc, char *argv[])
 		arguments[i - 1] = argv[i];
 		i++;
 	}
-	jointure = ft_strjoin(argc - 1, arguments, " ");
+	jointure = ft_strjoin(argc - 1, arguments, " ", 0);
 	free(arguments);
 	splitedtab = ft_split(jointure, ' ');
 	return (free(jointure), splitedtab);

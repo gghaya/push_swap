@@ -6,7 +6,7 @@
 /*   By: gghaya <gghaya@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 01:09:35 by gghaya            #+#    #+#             */
-/*   Updated: 2023/03/02 23:17:37 by gghaya           ###   ########.fr       */
+/*   Updated: 2023/03/08 22:59:01 by gghaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 
 int	getdemistack(t_node *stack_a)
 {
-	int	demi;
-
-	demi = ft_lstsize(stack_a) / 2;
-	return (demi);
+	return (ft_lstsize(stack_a) / 2);
 }
 
 int	getposition(t_node *stack_a, int p)
@@ -81,9 +78,9 @@ void	fillin(t_node **stack_a, t_node **stack_b, int i, int j)
 		}
 		else
 			ra(stack_a);
-		head = *stack_a;
 		if (ft_lstsize(*stack_b) > 1)
 			if ((*stack_b)->position < (*stack_b)->next->position)
 				sb(stack_b);
+		head = *stack_a;
 	}
 }

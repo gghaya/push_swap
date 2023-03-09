@@ -6,7 +6,7 @@
 /*   By: gghaya <gghaya@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 20:13:41 by gghaya            #+#    #+#             */
-/*   Updated: 2023/03/02 01:16:16 by gghaya           ###   ########.fr       */
+/*   Updated: 2023/03/08 22:38:29 by gghaya           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,14 +58,16 @@ int	getmax(t_node *head)
 	t_node	*p;
 	int		max;
 
-	max = head->data;
 	p = head;
-	while (p)
+	max = p->position;
+	while (p->next)
 	{
-		if (p->next && max < p->next->data)
-			max = p->next->data;
+		if (max < p->position)
+			max = p->position;
 		p = p->next;
 	}
+	if (max < p->position)
+		max = p->position;
 	return (max);
 }
 
@@ -76,7 +78,7 @@ int	getindex(t_node *head, int data)
 	i = 1;
 	while (head)
 	{
-		if (head->data != data)
+		if (head->position != data)
 			i++;
 		else
 			break ;
@@ -92,7 +94,7 @@ void	push_min(t_node **stack_a, t_node **stack_b)
 	t_node	*p;
 
 	p = (*stack_a);
-	indexmin = getindex(p, getmin(p));
+	indexmin = getindexx(p, getminn(p));
 	midlle = ft_lstsize((*stack_a)) / 2;
 	while (indexmin != 1)
 	{
@@ -100,7 +102,7 @@ void	push_min(t_node **stack_a, t_node **stack_b)
 			rra(stack_a);
 		else
 			sa(stack_a);
-		indexmin = getindex((*stack_a), getmin((*stack_a)));
+		indexmin = getindexx((*stack_a), getminn((*stack_a)));
 	}
 	pb(stack_a, stack_b);
 }
